@@ -12,7 +12,6 @@
 #include <fstream>
 #include <sstream>
 #include <ostream>
-#include <Windows.h>
 //---
 #include "samp\sampgdk.h"
 //---

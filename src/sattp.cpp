@@ -47,7 +47,7 @@ void FeedPoll() {
 
 	// Keep the server alive, until we get a signal, or the user simply shutdown the server with exit.
 	for (; KillWebServer != true;)
-		mg_poll_server(WServer, 1000);
+		mg_poll_server(WServer, 10);
 
 	mg_destroy_server(&WServer);
 }
@@ -58,7 +58,7 @@ PLUGIN_EXPORT bool PLUGIN_CALL Load(void **ppData) {
 	return true;
 }
 
-PLUGIN_EXPORT unsigned int PLUGIN_CALL Supporst() {
+PLUGIN_EXPORT unsigned int PLUGIN_CALL Supports() {
 	return sampgdk::Supports() | SUPPORTS_PROCESS_TICK;
 }
 
