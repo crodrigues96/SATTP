@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\samp">
+      <UniqueIdentifier>{b4985791-4bb8-406e-9368-3270fd3d96df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\samp">
+      <UniqueIdentifier>{e0847fac-42bb-4686-909f-d25623b114cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\samp\amx">
+      <UniqueIdentifier>{c66d1dff-1ec8-426a-833c-800952f02e05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\webserver">
+      <UniqueIdentifier>{0327f86a-5f0b-4711-b5b3-a9db78b5f28f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\webserver">
+      <UniqueIdentifier>{be6382c7-09ba-487b-8e28-7a92bc2f8cf7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\samp\plugincommon.h">
+      <Filter>Header Files\samp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\samp\sampgdk.h">
+      <Filter>Header Files\samp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\samp\amx\amx.h">
+      <Filter>Header Files\samp\amx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\samp\amx\sclinux.h">
+      <Filter>Header Files\samp\amx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\sattp.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\webserver\mongoose.h">
+      <Filter>Header Files\webserver</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\samp\amxplugin.cpp">
+      <Filter>Source Files\samp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\samp\sampgdk.c">
+      <Filter>Source Files\samp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\sattp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\webserver\mongoose.c">
+      <Filter>Source Files\webserver</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="sattp.def">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>
