@@ -48,6 +48,9 @@
     <ClInclude Include="..\..\src\webserver\mongoose.h">
       <Filter>Header Files\webserver</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\src\CWebserver.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\samp\amxplugin.cpp">
@@ -61,6 +64,9 @@
     </ClCompile>
     <ClCompile Include="..\..\src\webserver\mongoose.c">
       <Filter>Source Files\webserver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\CWebserver.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

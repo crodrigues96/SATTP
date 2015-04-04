@@ -5,9 +5,6 @@
 #endif
 //---
 #include <iostream>
-#include <cstring>
-#include <vector>
-#include <stdarg.h>
 #include <thread>
 #include <fstream>
 #include <sstream>
@@ -17,4 +14,5 @@
 //---
 #include "webserver\mongoose.h"
 //---
-extern struct mg_server *WServer;
+#include "CWebserver.hpp"
+//---

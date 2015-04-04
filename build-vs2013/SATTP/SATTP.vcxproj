@@ -77,6 +77,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\src\CWebserver.hpp" />
     <ClInclude Include="..\..\src\samp\amx\amx.h" />
     <ClInclude Include="..\..\src\samp\amx\sclinux.h" />
     <ClInclude Include="..\..\src\samp\plugincommon.h" />
@@ -85,6 +86,7 @@
     <ClInclude Include="..\..\src\webserver\mongoose.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\src\CWebserver.cpp" />
     <ClCompile Include="..\..\src\samp\amxplugin.cpp" />
     <ClCompile Include="..\..\src\samp\sampgdk.c" />
     <ClCompile Include="..\..\src\sattp.cpp" />
