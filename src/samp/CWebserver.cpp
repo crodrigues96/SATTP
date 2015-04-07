@@ -27,8 +27,20 @@ CWebserver::~CWebserver() {
 void CWebserver::FeedPoll() {
 	WServer = mg_create_server(NULL, &CWebserver::HandleRequests);
 	// Set the document root
-	mg_set_option(WServer, "document_root", "Webserver/");
+	char dir[512];
+#if defined WIN32
+	sprintf(dir, "%s/Webserver/", _getcwd(NULL, -1));
+	mg_set_option(WServer, "document_root", dir);
 
+	dir[0] = '\0';
+	sprintf(dir, "%s/php/php-cgi.exe", _getcwd(NULL, -1));
+	mg_set_option(WServer, "cgi_interpreter", dir);
+#else
+	sprintf(dir, "%s/Webserver/", get_current_dir_name());
+	mg_set_option(WServer, "document_root", dir);
+
+	mg_set_option(WServer, "cgi_interpreter", "/bin/php-cgi");
+#endif
 	// Set the Web server port
 	std::string http_port;
 	http_port = sampgdk::GetServerCFGOption("http_port");
@@ -40,6 +52,7 @@ void CWebserver::FeedPoll() {
 	// Output the message that the server is alive... will be removed in stable and official release.
 	sampgdk::logprintf(" **** WEB SERVER INITIALIZED IN THE AUXILIAR THREAD ****");
 	sampgdk::logprintf(" **** LISTENING FOR CONNECTIONS ON PORT: %s ****", mg_get_option(WServer, "listening_port"));
+
 	// Keep the server alive, until we get a signal, or the user simply shutdown the server with exit.
 	for (; this->KeepExecution == true;)
 		mg_poll_server(WServer, 1000);
@@ -52,20 +65,7 @@ int CWebserver::HandleRequests(struct mg_connection *conn, enum mg_event ev) {
 		return MG_TRUE;   // Authorize all requests
 	}
 	else if (ev == MG_REQUEST) {
-		std::ifstream WebFile;
-		WebFile.open(std::string(conn->uri));
-
-		if (WebFile.is_open() == false)
-			return MG_FALSE; // The file wasn't found, show the directory listing(Can be configurated later)
-
-		while (WebFile.eof() != true) {
-			char buf[2];
-			WebFile.read(buf, 2);
-			mg_printf_data(conn, "%s", buf);
-		}
-
-		WebFile.close();
-		return MG_TRUE;   // Mark as processed
+		return MG_FALSE; // Let mongoose handle everything.
 	}
 	else {
 		return MG_FALSE;  // Rest of the events are not processed
