@@ -49,7 +49,6 @@ void CWebserver::FeedPoll() {
 	else
 		mg_set_option(WServer, "listening_port", sampgdk::GetServerCFGOption("port").c_str());
 
-	// Output the message that the server is alive... will be removed in stable and official release.
 	sampgdk::logprintf(" **** WEB SERVER INITIALIZED IN THE AUXILIAR THREAD ****");
 	sampgdk::logprintf(" **** LISTENING FOR CONNECTIONS ON PORT: %s ****", mg_get_option(WServer, "listening_port"));
 
